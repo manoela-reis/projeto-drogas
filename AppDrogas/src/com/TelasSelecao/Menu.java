@@ -55,10 +55,10 @@ public class Menu extends View implements Runnable
 		rectBackground = new Rect();
 		
 		// Carregando as imagens.
-		background = img.ImageManager("TelaMenu.jpg", context);		
+		background = img.ImageManager("TelaMenu.png", context);		
 		play = img.ImageManager("play.png", context);
 		creditos = img.ImageManager("credits.png", context);
-				
+			
 		// TODO Auto-generated constructor stub
 	}
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) 
@@ -66,8 +66,8 @@ public class Menu extends View implements Runnable
 		super.onSizeChanged(w, h, oldw, oldh);
 		
 		rectBackground.set(0,0,getWidth(),getHeight());
-		rectPlay.set((int)(getWidth()/2.7), getHeight()/4,(int)(getWidth()/1.5),(int)(getHeight()/1.5));		
-		rectCreditos.set((int)(getWidth()/1.5), (int)(getHeight()/1.8),(int)(getWidth()/1.02),(int)(getHeight()/1.02));		
+		rectPlay.set((int)(getWidth()/1.5f), (int)(getHeight()/5),(int)(getWidth()/1.2),(int)(getHeight()/2.1));		
+		rectCreditos.set((int)(getWidth()/1.5), (int)(getHeight()/1.8),(int)(getWidth()/1.2),(int)(getHeight()/1.26));		
 		
 	}
 	public void draw(Canvas canvas)

@@ -49,9 +49,9 @@ public class MainActivity extends Activity
 	
 	public void skank (View v)
 	{
-		Intent intent = new Intent();
-		i.set				(this, Creditos.class);
-		startActivity(intent);		
+		Intent i = new Intent();
+		i.setClass(this, Creditos.class);
+		startActivity(i);		
 	}
 
 }

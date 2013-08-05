@@ -31,12 +31,4 @@ public class MainActivity extends Activity
 		 finish();
 		 super.onBackPressed();
 	 }
-
-/*	public void skank (View v)
-{
-	Intent intent = new Intent();
-	intent.setClass(this, Creditos.class);
-	startActivity(intent);		
-}
-*/
 }

@@ -45,7 +45,7 @@ public class Creditos extends ListActivity {
 		ldb3.setFuncao("Programador");
 		
 		ListaDeNomes_Base ldb4 = new ListaDeNomes_Base();
-		ldb4.setIntegrantes("Vitória Oliveira");
+		ldb4.setIntegrantes("Vitória Silva");
 		ldb4.setFuncao("Programador");
 		
 		ListaDeNomes_Base ldb5 = new ListaDeNomes_Base();

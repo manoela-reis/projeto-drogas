@@ -113,7 +113,7 @@ public class Menu extends View implements Runnable
 			if(rectCreditos.contains(a,b))
 			{
 				Log.i(TAG, "Escolhi créditos!! ");
-				opcaoCreditos = new CreditosView(activity);
+				opcaoCreditos = new CreditosView(activity, CreditosView.processo);
 				activity.setContentView(opcaoCreditos);	
 			}
 		}

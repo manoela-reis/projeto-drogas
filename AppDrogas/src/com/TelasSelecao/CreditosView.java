@@ -31,13 +31,13 @@ public class CreditosView extends View implements Runnable, Killable {
 	static int period = 1;
 	String TAG = "Creditos";
 	int pos = 0;
-	Thread processo;
+	static Thread processo;
 	public static long deltaTime;
 	public long lastTimeCount;
 	public boolean ativo = true;
 	private View opcaoPlay;
 	
-	public CreditosView(Context context)
+	public CreditosView(Context context, Thread processo)
 	{
 		super(context);
 
@@ -106,7 +106,7 @@ public class CreditosView extends View implements Runnable, Killable {
 					pos++;
 				} else {
 					if (pos == 1) {
-//						activity.finish();
+						activity.finish();// nao altera
 						opcaoPlay = new Menu(activity);
 						activity.setContentView(opcaoPlay);	
 					}
@@ -136,8 +136,8 @@ public class CreditosView extends View implements Runnable, Killable {
 			pos = 1;
 		}
 		if (period == 9) {
-
-			//activity.finish();
+			//dando problema
+			//activity.finish();//nao da erro mas fecha o app
 			opcaoPlay = new Menu(activity);
 			activity.setContentView(opcaoPlay);	
 		}

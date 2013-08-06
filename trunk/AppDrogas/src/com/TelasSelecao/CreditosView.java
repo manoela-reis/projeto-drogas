@@ -36,7 +36,9 @@ public class CreditosView extends View implements Runnable, Killable {
 	public long lastTimeCount;
 	public boolean ativo = true;
 	private View opcaoPlay;
-	public CreditosView(Context context) {
+	
+	public CreditosView(Context context)
+	{
 		super(context);
 
 		setFocusableInTouchMode(true);
@@ -47,7 +49,7 @@ public class CreditosView extends View implements Runnable, Killable {
 		picture = new ImageManager();
 		paint = new Paint();
 
-		ativo=true;
+		ativo = true;
 		activity = (Activity) context;
 
 		Log.i(TAG, "Entrou no construtor");
@@ -74,8 +76,8 @@ public class CreditosView extends View implements Runnable, Killable {
 
 		super.onSizeChanged(w, h, oldw, oldh);
 
-		rectCreditos1.set(getWidth() / 22, 0, getWidth(),
-				(int) (getHeight() / 1.08f));
+		rectCreditos1.set(getWidth() / 26, 0, getWidth(),
+				(int) (getHeight() / 1.02f));
 
 	}
 

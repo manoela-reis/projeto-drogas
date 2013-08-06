@@ -61,8 +61,8 @@ public class EscolherDrogas extends View implements Runnable
 		
 		// Carregando as imagens.
 		background = img.ImageManager("Drogas_base.png", context);		
-		skank = img.ImageManager("Drogas_Cigarro.png", context);
-		cigarro = img.ImageManager("Drogas_skank.png", context);
+		cigarro = img.ImageManager("Drogas_Cigarro.png", context);
+		skank = img.ImageManager("Drogas_skank.png", context);
 				
 		// TODO Auto-generated constructor stub
 	}

@@ -14,7 +14,7 @@ public class Creditos extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-/*		// Sem Activity e em modo Fullcreen.
+		// Sem Activity e em modo Fullcreen.
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -26,8 +26,8 @@ public class Creditos extends ListActivity {
 		
 		setListAdapter(new ListaDeNomes_Adapter(this, integrantes));
 		
-//		setContentView(R.layout.activity_creditos);
-	*/	
+		setContentView(R.layout.activity_creditos);
+	
 	}
 
 	private void setIntegrantes(){

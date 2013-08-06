@@ -1,8 +1,8 @@
-package com.TelasSelecao;
+package com.Cigarro;
 
 import java.io.InputStream;
 
-import com.Cigarro.MenuCigarro;
+import com.example.appdrogas.Creditos;
 
 import Gerenciadores.ImageManager;
 import android.app.Activity;
@@ -21,16 +21,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 
-public class EscolherDrogas extends View implements Runnable
+public class MenuCigarro extends View implements Runnable
 {
 	private Bitmap background;
 	private Bitmap skank;
 	private Bitmap cigarro;
 	private Bitmap somOn;
 	
-	private Rect rectSkank;
-	private Rect rectCigarro;
-	private Rect rectCreditos;
+	private Rect rectSaibaMais;
+	private Rect rectDoencas;
+	private Rect rectCampanhas;
 	private Rect rectBackground;
 	
 	ImageManager img;
@@ -38,11 +38,7 @@ public class EscolherDrogas extends View implements Runnable
 	Activity activity;
 	public static final String TAG = "MenuInicial";
 	
-	View menuCigarro;
-	View loadPeloOutro;
-	View loadPeloMundo;
-	
-	public EscolherDrogas(Context context) 
+	public MenuCigarro(Context context) 
 	{	
 		super(context);
 		
@@ -54,16 +50,16 @@ public class EscolherDrogas extends View implements Runnable
 
 		activity = (Activity) context;
 		img = new ImageManager();
-		rectSkank = new Rect();
-		rectCigarro = new Rect();
-		rectCreditos = new Rect();
+		rectSaibaMais = new Rect();
+		rectDoencas = new Rect();
+		rectCampanhas = new Rect();
 		rectBackground = new Rect();
 		
 		// Carregando as imagens.
-		background = img.ImageManager("Drogas_base.png", context);		
-		skank = img.ImageManager("Drogas_Cigarro.png", context);
+		background = img.ImageManager("TelaMenu.png", context);		
+/*		skank = img.ImageManager("Drogas_Cigarro.png", context);
 		cigarro = img.ImageManager("Drogas_skank.png", context);
-				
+*/				
 		// TODO Auto-generated constructor stub
 	}
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) 
@@ -71,18 +67,20 @@ public class EscolherDrogas extends View implements Runnable
 		super.onSizeChanged(w, h, oldw, oldh);
 		
 		rectBackground.set(0,0,getWidth(),getHeight());
-		rectCigarro.set((int)(getWidth()/1.5f), (int)(getHeight()/5),(int)(getWidth()/1.2),(int)(getHeight()/2.1));
-		//rectCigarro.set((int)(getWidth()/1.6), (int)(getHeight()/3.75),(int)(getWidth()/1.35),(int)(getHeight()/2.12));
-		rectSkank.set((int)(getWidth()/1.5), (int)(getHeight()/1.8),(int)(getWidth()/1.2),(int)(getHeight()/1.26));	
-		
+		rectSaibaMais.set((int)(getWidth()/10),(int)(getHeight()/4),(int)(getWidth()/1.2),(int)(getHeight()/2.5f));
+		rectDoencas.set((int)(getWidth()/10),(int)(getHeight()/2),(int)(getWidth()/1.2),(int)(getHeight()/1.5f));
+		rectCampanhas.set((int)(getWidth()/10),(int)(getHeight()/1.3),(int)(getWidth()/1.2),(int)(getHeight()/1.1f));
+
 	}
 	public void draw(Canvas canvas)
 	{
 		super.draw(canvas);		
 
 		canvas.drawBitmap(background, null, rectBackground, paint);
-		canvas.drawBitmap(cigarro, null, rectCigarro, paint);
-		canvas.drawBitmap(skank, null, rectSkank, paint);
+	
+		canvas.drawRect(rectSaibaMais, paint);
+		canvas.drawRect(rectDoencas, paint);
+		canvas.drawRect(rectCampanhas, paint);		
 	}
 	
 	public boolean onTouchEvent(MotionEvent event) 
@@ -107,28 +105,36 @@ public class EscolherDrogas extends View implements Runnable
 			int a = (int)event.getX();
 			int b = (int)event.getY();
 
-			// Cigarro
-			if(rectCigarro.contains(a,b))
+			// Saiba +
+			if(rectSaibaMais.contains(a,b))
 			{
-				Log.i(TAG, "Escolhi cigarro!! ");
-				menuCigarro = new MenuCigarro(activity);
-				activity.setContentView(menuCigarro);	
-			}
-			
-			// Skank
-			if(rectSkank.contains(a,b))
-			{
-				Log.i(TAG, "Escolhi skank! ");
+				// Chamar aqui o view flipper 
+				
 //				loadPeloOutro = new PeloOutro(activity);
-				activity.setContentView(loadPeloOutro);	
+//				activity.setContentView(loadPeloOutro);	
+				
+				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				activity.startActivity(intent);
+				activity.finish();
 			}
 			
-			// Créditos
-			if(rectCreditos.contains(a,b))
+			// Doenças
+			if(rectDoencas.contains(a,b))
 			{
-				Log.i(TAG, "Escolhi créditos!! ");
-//				loadPeloMundo = new PeloMundo(activity);
-				activity.setContentView(loadPeloMundo);	
+				Log.i(TAG, "Escolhi doenças!! ");
+
+				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				activity.startActivity(intent);
+				activity.finish();
+			}
+			
+
+			// Campanhas
+			if(rectCampanhas.contains(a,b))
+			{
+				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				activity.startActivity(intent);
+				activity.finish();
 			}
 		}
 		

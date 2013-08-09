@@ -106,7 +106,7 @@ public class CreditosView extends View implements Runnable, Killable {
 					pos++;
 				} else {
 					if (pos == 1) {
-						activity.finish();// nao altera
+		//				activity.finish();// nao altera
 						opcaoPlay = new Menu(activity);
 						activity.setContentView(opcaoPlay);	
 					}

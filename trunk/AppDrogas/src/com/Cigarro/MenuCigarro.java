@@ -24,9 +24,9 @@ import android.view.Window;
 public class MenuCigarro extends View implements Runnable
 {
 	private Bitmap background;
-	private Bitmap skank;
-	private Bitmap cigarro;
-	private Bitmap somOn;
+	private Bitmap campanhas;
+	private Bitmap doencas;
+	private Bitmap saibaMais;
 	
 	private Rect rectSaibaMais;
 	private Rect rectDoencas;
@@ -57,9 +57,10 @@ public class MenuCigarro extends View implements Runnable
 		
 		// Carregando as imagens.
 		background = img.ImageManager("TelaMenu.png", context);		
-/*		skank = img.ImageManager("Drogas_Cigarro.png", context);
-		cigarro = img.ImageManager("Drogas_skank.png", context);
-*/				
+		saibaMais = img.ImageManager("saibaMais.png", context);
+		campanhas = img.ImageManager("campanhas.png", context);
+		doencas = img.ImageManager("doencas.png", context);
+				
 		// TODO Auto-generated constructor stub
 	}
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) 
@@ -67,9 +68,9 @@ public class MenuCigarro extends View implements Runnable
 		super.onSizeChanged(w, h, oldw, oldh);
 		
 		rectBackground.set(0,0,getWidth(),getHeight());
-		rectSaibaMais.set((int)(getWidth()/10),(int)(getHeight()/4),(int)(getWidth()/1.2),(int)(getHeight()/2.5f));
-		rectDoencas.set((int)(getWidth()/10),(int)(getHeight()/2),(int)(getWidth()/1.2),(int)(getHeight()/1.5f));
-		rectCampanhas.set((int)(getWidth()/10),(int)(getHeight()/1.3),(int)(getWidth()/1.2),(int)(getHeight()/1.1f));
+		rectSaibaMais.set((int)(getWidth()/6),(int)(getHeight()/3.4),(int)(getWidth()/2.5),(int)(getHeight()/1.4f));
+		rectDoencas.set((int)(getWidth()/2.3),(int)(getHeight()/3.4),(int)(getWidth()/1.55),(int)(getHeight()/1.4f));
+		rectCampanhas.set((int)(getWidth()/1.5),(int)(getHeight()/3.4),(int)(getWidth()/1.14),(int)(getHeight()/1.4f));
 
 	}
 	public void draw(Canvas canvas)
@@ -77,10 +78,10 @@ public class MenuCigarro extends View implements Runnable
 		super.draw(canvas);		
 
 		canvas.drawBitmap(background, null, rectBackground, paint);
-	
-		canvas.drawRect(rectSaibaMais, paint);
-		canvas.drawRect(rectDoencas, paint);
-		canvas.drawRect(rectCampanhas, paint);		
+		canvas.drawBitmap(saibaMais, null, rectSaibaMais, paint);
+		canvas.drawBitmap(doencas, null, rectDoencas, paint);
+		canvas.drawBitmap(campanhas, null, rectCampanhas, paint);
+
 	}
 	
 	public boolean onTouchEvent(MotionEvent event) 
@@ -108,11 +109,8 @@ public class MenuCigarro extends View implements Runnable
 			// Saiba +
 			if(rectSaibaMais.contains(a,b))
 			{
-				// Chamar aqui o view flipper 
-				
 //				loadPeloOutro = new PeloOutro(activity);
 //				activity.setContentView(loadPeloOutro);	
-				
 				Intent intent = new Intent(activity, Flipper_Cigarro.class);
 				activity.startActivity(intent);
 				activity.finish();

@@ -3,6 +3,7 @@ package com.TelasSelecao;
 import java.io.InputStream;
 
 import com.Cigarro.MenuCigarro;
+import com.Skank.MenuSkank;
 
 import Gerenciadores.ImageManager;
 import android.app.Activity;
@@ -39,9 +40,8 @@ public class EscolherDrogas extends View implements Runnable
 	public static final String TAG = "MenuInicial";
 	
 	View menuCigarro;
-	View loadPeloOutro;
-	View loadPeloMundo;
-	
+	View menuSkank;
+
 	public EscolherDrogas(Context context) 
 	{	
 		super(context);
@@ -119,24 +119,14 @@ public class EscolherDrogas extends View implements Runnable
 			if(rectSkank.contains(a,b))
 			{
 				Log.i(TAG, "Escolhi skank! ");
-//				loadPeloOutro = new PeloOutro(activity);
-				activity.setContentView(loadPeloOutro);	
-			}
-			
-			// Créditos
-			if(rectCreditos.contains(a,b))
-			{
-				Log.i(TAG, "Escolhi créditos!! ");
-//				loadPeloMundo = new PeloMundo(activity);
-				activity.setContentView(loadPeloMundo);	
+				menuSkank = new MenuSkank(activity);
+				activity.setContentView(menuSkank);	
 			}
 		}
 		
 		return super.onTouchEvent(event);
 	}
-	
 
-	
 	public void run() 
 	{
 		while(true)

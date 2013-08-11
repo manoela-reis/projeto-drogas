@@ -5,6 +5,7 @@ import java.io.InputStream;
 import com.example.appdrogas.Creditos;
 
 import Gerenciadores.ImageManager;
+import Gerenciadores.Sprite;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -38,6 +39,16 @@ public class MenuCigarro extends View implements Runnable
 	Activity activity;
 	public static final String TAG = "MenuInicial";
 	
+	Sprite spriteSaibaMais;
+	Sprite spriteDoencas;
+	Sprite spriteCampanhas;
+	
+	
+	Boolean opcaoSaibaMais = false; 
+	Boolean opcaoDoencas = false; 
+	Boolean opcaoCampanhas = false; 
+	
+	
 	public MenuCigarro(Context context) 
 	{	
 		super(context);
@@ -61,6 +72,14 @@ public class MenuCigarro extends View implements Runnable
 		campanhas = img.ImageManager("campanhas.png", context);
 		doencas = img.ImageManager("doencas.png", context);
 				
+		spriteSaibaMais = new Sprite(saibaMais, 2, 1);
+		spriteDoencas = new Sprite(doencas, 2, 1);
+		spriteCampanhas = new Sprite(campanhas, 2, 1);
+		
+		this.spriteSaibaMais.Modificar(0);
+		this.spriteDoencas.Modificar(0);
+		this.spriteCampanhas.Modificar(0);
+		
 		// TODO Auto-generated constructor stub
 	}
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) 
@@ -78,10 +97,11 @@ public class MenuCigarro extends View implements Runnable
 		super.draw(canvas);		
 
 		canvas.drawBitmap(background, null, rectBackground, paint);
-		canvas.drawBitmap(saibaMais, null, rectSaibaMais, paint);
-		canvas.drawBitmap(doencas, null, rectDoencas, paint);
-		canvas.drawBitmap(campanhas, null, rectCampanhas, paint);
 
+		this.spriteSaibaMais.Draw(canvas, rectSaibaMais);
+		this.spriteDoencas.Draw(canvas, rectDoencas);
+		this.spriteCampanhas.Draw(canvas, rectCampanhas);
+		
 	}
 	
 	public boolean onTouchEvent(MotionEvent event) 
@@ -92,6 +112,24 @@ public class MenuCigarro extends View implements Runnable
 			
 			int a = (int)event.getRawX();
 			int b = (int)event.getRawY();
+			
+			if (rectSaibaMais.contains(a,b))
+			{				
+				spriteSaibaMais.Modificar(1);
+				opcaoSaibaMais = true;
+			}
+			
+			if (rectDoencas.contains(a,b))
+			{				
+				spriteDoencas.Modificar(1);
+				opcaoDoencas = true;
+			}
+			
+			if (rectCampanhas.contains(a,b))
+			{				
+				spriteCampanhas.Modificar(1);
+				opcaoCampanhas = true;
+			}						
 		}
 		
 		if (event.getAction() == MotionEvent.ACTION_MOVE) 
@@ -105,16 +143,6 @@ public class MenuCigarro extends View implements Runnable
 			
 			int a = (int)event.getX();
 			int b = (int)event.getY();
-
-			// Saiba +
-			if(rectSaibaMais.contains(a,b))
-			{
-//				loadPeloOutro = new PeloOutro(activity);
-//				activity.setContentView(loadPeloOutro);	
-				Intent intent = new Intent(activity, Flipper_Cigarro.class);
-				activity.startActivity(intent);
-				activity.finish();
-			}
 			
 			// Doenças
 			if(rectDoencas.contains(a,b))
@@ -134,30 +162,55 @@ public class MenuCigarro extends View implements Runnable
 				activity.startActivity(intent);
 				activity.finish();
 			}
-		}
+			
+			if (rectSaibaMais.contains(a, b)) 
+			{
+				if (opcaoSaibaMais == true)
+				{
+					Intent mod = new Intent((Context)activity,Flipper_Cigarro.class);
+					activity.startActivity(mod);
+					opcaoSaibaMais = false;
+				} 
+//				opcaoSaibaMais = false;
+			}
+			
+	//		else 
+	//		{
+	//			spritePlay.Modificar(0);
+	//		}
 		
+		}
 		return super.onTouchEvent(event);
 	}
 	
-
-	
-	public void run() 
-	{
-		while(true)
-		{
-			try
-			{	
+	public void run() {
+		while (true) {
+			try {
 				Thread.sleep(1);
+
 			}
-			
-			catch(Exception e)
-			{
+
+			catch (Exception e) {
 				Log.e("Deu erro", "Quem sabe mete o pe");
 			}
-			
+			update();
+
 			postInvalidate();
 		}
 		// TODO Auto-generated method stub
+	}
+
+	public void update() 
+	{
+	/*	if (!opcaoSaibaMais) 
+		{
+			spritePlay.Modificar(1);
+		}*/
+		
+/*		if (opcaoSaibaMais == false)
+		{
+			spritePlay.Modificar(0);
+		}*/
 	}
 	
 }

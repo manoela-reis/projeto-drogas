@@ -2,7 +2,7 @@ package com.Skank;
 
 import java.io.InputStream;
 
-import com.Cigarro.Flipper_Cigarro;
+import com.Cigarro.Flipper_Cigarro_Saiba;
 import com.example.appdrogas.Creditos;
 
 import Gerenciadores.ImageManager;
@@ -70,7 +70,7 @@ public class MenuSkank extends View implements Runnable
 		// Carregando as imagens.
 		background = img.ImageManager("TelaMenu.png", context);		
 		saibaMais = img.ImageManager("saibaMais.png", context);
-		campanhas = img.ImageManager("campanhas.png", context);
+		campanhas = img.ImageManager("campanha_skank.png", context);
 		doencas = img.ImageManager("doencas.png", context);
 				
 		spriteSaibaMais = new Sprite(saibaMais, 2, 1);
@@ -150,7 +150,7 @@ public class MenuSkank extends View implements Runnable
 			{
 				Log.i(TAG, "Escolhi doenças!! ");
 
-				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				Intent intent = new Intent(activity, Flipper_Doencas.class);
 				activity.startActivity(intent);
 				activity.finish();
 			}
@@ -159,7 +159,7 @@ public class MenuSkank extends View implements Runnable
 			// Campanhas
 			if(rectCampanhas.contains(a,b))
 			{
-				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				Intent intent = new Intent(activity, Flipper_Campanhas.class);
 				activity.startActivity(intent);
 				activity.finish();
 			}
@@ -168,7 +168,7 @@ public class MenuSkank extends View implements Runnable
 			{
 				if (opcaoSaibaMais == true)
 				{
-					Intent mod = new Intent((Context)activity,Flipper_Cigarro.class);
+					Intent mod = new Intent((Context)activity, Flipper_Saiba.class);
 					activity.startActivity(mod);
 					opcaoSaibaMais = false;
 				} 

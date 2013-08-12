@@ -149,7 +149,7 @@ public class MenuCigarro extends View implements Runnable
 			{
 				Log.i(TAG, "Escolhi doenças!! ");
 
-				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				Intent intent = new Intent(activity, Flipper_Cigarro_Doencas.class);
 				activity.startActivity(intent);
 				activity.finish();
 			}
@@ -158,7 +158,7 @@ public class MenuCigarro extends View implements Runnable
 			// Campanhas
 			if(rectCampanhas.contains(a,b))
 			{
-				Intent intent = new Intent(activity, Flipper_Cigarro.class);
+				Intent intent = new Intent(activity, Flipper_Cigarro_Campanhas.class);
 				activity.startActivity(intent);
 				activity.finish();
 			}
@@ -167,7 +167,7 @@ public class MenuCigarro extends View implements Runnable
 			{
 				if (opcaoSaibaMais == true)
 				{
-					Intent mod = new Intent((Context)activity,Flipper_Cigarro.class);
+					Intent mod = new Intent((Context)activity,Flipper_Cigarro_Saiba.class);
 					activity.startActivity(mod);
 					opcaoSaibaMais = false;
 				} 

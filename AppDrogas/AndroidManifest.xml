@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="com.Cigarro.Flipper_Cigarro">
+            android:name="com.Cigarro.Flipper_Cigarro_Saiba">
             </activity>
                 <activity 
             android:name="example.appdrogas.Creditos">

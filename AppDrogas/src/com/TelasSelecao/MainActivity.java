@@ -26,9 +26,9 @@ public class MainActivity extends Activity
 		setContentView(menu);		
 	}
 	
-	 public void onBackPressed() 
+/*	 public void onBackPressed() 
 	 {
 		 finish();
 		 super.onBackPressed();
-	 }
+	 }*/
 }

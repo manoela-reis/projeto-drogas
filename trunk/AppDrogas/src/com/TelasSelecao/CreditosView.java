@@ -35,7 +35,7 @@ public class CreditosView extends View implements Runnable, Killable {
 	public static long deltaTime;
 	public long lastTimeCount;
 	public boolean ativo = true;
-	private View opcaoPlay;
+	private View backMenu;
 	
 	public CreditosView(Context context, Thread processo)
 	{
@@ -53,8 +53,7 @@ public class CreditosView extends View implements Runnable, Killable {
 		activity = (Activity) context;
 
 		Log.i(TAG, "Entrou no construtor");
-		creditos1[0] = picture.ImageManager("creditos1.png",super.getContext());
-		creditos1[1] = picture.ImageManager("creditos2.png",super.getContext());
+		creditos1[0] = picture.ImageManager("creditos.png",super.getContext());
 
 		// Thread
 		this.processo = processo;
@@ -76,8 +75,7 @@ public class CreditosView extends View implements Runnable, Killable {
 
 		super.onSizeChanged(w, h, oldw, oldh);
 
-		rectCreditos1.set(getWidth() / 26, 0, getWidth(),
-				(int) (getHeight() / 1.02f));
+		rectCreditos1.set(0, 0, getWidth(),getHeight());
 
 	}
 
@@ -102,19 +100,14 @@ public class CreditosView extends View implements Runnable, Killable {
 			int b = (int) event.getY();
 
 			if (rectCreditos1.contains(a, b)) {
-				if (pos == 0) {
-					pos++;
-				} else {
-					if (pos == 1) {
+
 		//				activity.finish();// nao altera
-						opcaoPlay = new Menu(activity);
-						activity.setContentView(opcaoPlay);	
+						backMenu = new Menu(activity);
+						activity.setContentView(backMenu);	
 					}
 
-				}
+				
 			}
-
-		}
 
 		return super.onTouchEvent(event);
 	}
@@ -132,14 +125,8 @@ public class CreditosView extends View implements Runnable, Killable {
 			counter = 0;
 		}
 		if (period >= 5) {
-
-			pos = 1;
-		}
-		if (period == 9) {
-			//dando problema
-			//activity.finish();//nao da erro mas fecha o app
-			opcaoPlay = new Menu(activity);
-			activity.setContentView(opcaoPlay);	
+//			backMenu = new Menu(activity);
+//			activity.setContentView(backMenu);	
 		}
 	}
 

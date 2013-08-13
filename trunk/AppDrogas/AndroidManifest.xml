@@ -24,11 +24,33 @@
             </intent-filter>
         </activity>
         <activity 
-            android:name="com.Cigarro.Flipper_Cigarro_Saiba">
+            android:name="com.Cigarro.Flipper_Cigarro_Saiba"
+            android:screenOrientation="landscape">
             </activity>
-                <activity 
+            <activity 
+            android:name="com.Cigarro.Flipper_Cigarro_Campanhas"
+            android:screenOrientation="landscape">  
+            </activity>
+            <activity 
+            android:name="com.Cigarro.Flipper_Cigarro_Doencas"
+            android:screenOrientation="landscape">  
+            </activity>
+            <activity 
             android:name="example.appdrogas.Creditos">
             </activity>
+            <activity 
+            android:name="com.Skank.Flipper_Saiba"
+            android:screenOrientation="landscape">  
+            </activity>
+             <activity 
+            android:name="com.Skank.Flipper_Doencas"
+            android:screenOrientation="landscape">  
+            </activity>
+            <activity 
+            android:name="com.Skank.Flipper_Campanhas"
+            android:screenOrientation="landscape">  
+            </activity>
+            
     </application>
 
 </manifest>

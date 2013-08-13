@@ -2,37 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/telainicialdrogas"
+    android:background="@drawable/campanha1"
     android:screenOrientation="landscape"
     tools:context=".Conect" >
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginLeft="-170dp"
-        android:layout_marginTop="63dp"
-        android:src="@drawable/skank" />
-
-    <ImageView
-        android:id="@+id/ImageView03"
-        android:layout_width="fill_parent"
-        android:layout_height="130dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="63dp"
-        android:onClick="skank"
-        android:src="@drawable/skank" />
-
-    <ImageView
-        android:id="@+id/creditos"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imageView1"
-        android:clickable="true"
-        android:onClick="creditos"
-        android:src="@drawable/skank" />
 
 </RelativeLayout>

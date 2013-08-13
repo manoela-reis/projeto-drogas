@@ -23,7 +23,7 @@ public class Flipper_Cigarro_Campanhas extends Activity implements OnClickListen
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 	    setVolumeControlStream(AudioManager.STREAM_MUSIC);
-	    setContentView(R.layout.flipper_skank_saiba_mais);
+	    setContentView(R.layout.flipper_cigarro_campanha);
 	    flippy = (ViewFlipper) findViewById(R.id.viewFlipper1);
 	    flippy.setOnClickListener(this);
 //	    flippy.setFlipInterval(500);

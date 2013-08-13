@@ -3,8 +3,6 @@ package com.Skank;
 import java.io.InputStream;
 
 import com.Cigarro.Flipper_Cigarro_Saiba;
-import com.example.appdrogas.Creditos;
-
 import Gerenciadores.ImageManager;
 import Gerenciadores.Sprite;
 import android.app.Activity;
@@ -15,7 +13,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.hardware.Camera.Area;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -89,8 +86,8 @@ public class MenuSkank extends View implements Runnable
 		
 		rectBackground.set(0,0,getWidth(),getHeight());
 		rectSaibaMais.set((int)(getWidth()/6),(int)(getHeight()/3.4),(int)(getWidth()/2.5),(int)(getHeight()/1.4f));
-		rectDoencas.set((int)(getWidth()/2.3),(int)(getHeight()/3.4),(int)(getWidth()/1.55),(int)(getHeight()/1.4f));
-		rectCampanhas.set((int)(getWidth()/1.5),(int)(getHeight()/3.4),(int)(getWidth()/1.14),(int)(getHeight()/1.4f));
+		rectDoencas.set((int)(getWidth()/2.3),(int)(getHeight()/3.4),(int)(getWidth()/1.55),(int)(getHeight()/1.401f));
+		rectCampanhas.set((int)(getWidth()/1.5),(int)(getHeight()/3.401),(int)(getWidth()/1.14),(int)(getHeight()/1.388f));
 
 	}
 	public void draw(Canvas canvas)

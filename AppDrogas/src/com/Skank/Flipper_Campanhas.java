@@ -32,8 +32,8 @@ public class Flipper_Campanhas extends Activity implements OnClickListener
 
 	public void onClick(View v) 
 	{
-		flippy.showNext();
-		
+		//flippy.showNext();
+		finish();
 		
 	}
 

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+   <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/doenca1" />
+    
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/doenca2" />
+        
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/doenca3" />
+    
+     <ImageView
+         android:id="@+id/imageView4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:scaleType="fitXY"
+         android:src="@drawable/doenca4" />
+
+      <ImageView
+          android:id="@+id/imageView5"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:scaleType="fitXY"
+          android:src="@drawable/doenca5" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/doenca6" />
+      
+                  <ImageView
+                      android:id="@+id/imageView5"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:scaleType="fitXY"
+                      android:src="@drawable/doenca7" />
+            
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/doenca8" />
+                  
+                              <ImageView
+                                  android:id="@+id/imageView5"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:scaleType="fitXY"
+                                  android:src="@drawable/doenca9" />
+                        
+                                    <ImageView
+                                        android:id="@+id/imageView5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/doenca10" />
+                              
+                                          <ImageView
+                                              android:id="@+id/imageView5"
+                                              android:layout_width="wrap_content"
+                                              android:layout_height="wrap_content"
+                                              android:scaleType="fitXY"
+                                              android:src="@drawable/doenca11" />
+                                    
+                                                <ImageView
+                                                    android:id="@+id/imageView5"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:scaleType="fitXY"
+                                                    android:src="@drawable/doenca12" />
+                                                
+      
+	</ViewFlipper>
+</LinearLayout>

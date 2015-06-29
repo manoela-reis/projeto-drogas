@@ -1,0 +1,1 @@
+Aplicativo sobre skank e cigarro.
